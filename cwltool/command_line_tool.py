@@ -1504,7 +1504,9 @@ class CommandLineTool(Process):
                             if j_dict.get("class") == "File":
                                 j_dict[key] = val
                             else:
-                                return {x: recursively_insert(y, key, val) for x, y in j_dict.items()}
+                                return {
+                                    x: recursively_insert(y, key, val) for x, y in j_dict.items()
+                                }
                         return j_dict
 
                     result = recursively_insert(result, "format", format_field)
